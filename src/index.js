@@ -29,50 +29,65 @@ import ReactDOM, {render} from 'react-dom';
 // )
 
 //Lesson Day 1
-var style = {
-	backgroundColor: 'blue',
-	color: 'white'
-}
-// ReactDOM.render(
-// 	<div style={style} id="hohohohoh">
-// 		<h1>Ho Ho Ho</h1>
-// 		<h5>I am coming, here!!!</h5>
-// 	</div>,
-// 	document.getElementById('root')
-// )
+// var style = {
+// 	backgroundColor: 'blue',
+// 	color: 'white'
+// }
+// // ReactDOM.render(
+// // 	<div style={style} id="hohohohoh">
+// // 		<h1>Ho Ho Ho</h1>
+// // 		<h5>I am coming, here!!!</h5>
+// // 	</div>,
+// // 	document.getElementById('root')
+// // )
 
-//Lesson Day 2
+// //Lesson Day 2
 let bookData = {
 	namee: "Harry Potter",
 	year: 2008,
 	author: "J.K.Rowling"
 }
-class Message extends Component{
-	getYears = (lastYear) => {
-		return lastYear - bookData.year
-	}
-	render(){
-		const {clr, date, txt} = this.props
-		return(
-			<React.Fragment>
-			<section>
-				<h1 style = {{color: clr}}>{txt}</h1>
-				<h4 style = {style} >Today is {date} </h4>
-			</section>
-			<section>
-				<ul>
-					<li>Book Name: {this.props.namee}</li>
-					<li>Book Year: {this.props.year}</li>
-					<li>Book Author: {this.props.author}</li>
-					<li>Passed Years: {this.getYears(2019)}</li>
-				</ul>
-			</section>
-			</React.Fragment>
-		)
-	}
+// class Message extends Component{
+// 	getYears = (lastYear) => {
+// 		return lastYear - bookData.year
+// 	}
+// 	render(){
+// 		const {clr, date, txt} = this.props
+// 		return(
+// 			<React.Fragment>
+// 			<section>
+// 				<h1 style = {{color: clr}}>{txt}</h1>
+// 				<h4 style = {style} >Today is {date} </h4>
+// 			</section>
+// 			<section>
+// 				<ul>
+// 					<li>Book Name: {this.props.namee}</li>
+// 					<li>Book Year: {this.props.year}</li>
+// 					<li>Book Author: {this.props.author}</li>
+// 					<li>Passed Years: {this.getYears(2019)}</li>
+// 				</ul>
+// 			</section>
+// 			</React.Fragment>
+// 		)
+// 	}
+// }
+// render(
+// 	<Message txt = "Lesson Day 2" clr = "blue" date = "16 January, 2019" 
+// 	namee = {bookData.namee} year = {bookData.year} author = {bookData.author}/>,
+// 	document.getElementById('root')
+// )
+
+//Lesson Day 3
+const Book = (props) => {
+	return(
+		<section>
+			<h2>{props.namee}</h2>
+			<h4>{props.year}</h4>
+			<h4>{props.author}</h4>
+		</section>
+	)
 }
 render(
-	<Message txt = "Lesson Day 2" clr = "blue" date = "16 January, 2019" 
-	namee = {bookData.namee} year = {bookData.year} author = {bookData.author}/>,
+	<Book namee = {bookData.namee} year = {bookData.year} author = {bookData.author} />,
 	document.getElementById('root')
 )
